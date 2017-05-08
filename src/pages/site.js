@@ -17,7 +17,9 @@ module.exports = {
       return `${n.get('menuSite')}<br>
       ERROR: ${data.msg}`
     } else {
-      var text = `<div><b>WELCOME TO MAINSITE</b></div>`
+      var text = `
+      ${n.get('menuSite')}
+      <div><b>WELCOME TO MAINSITE</b></div>`
       data.forEach(art => {
         text += `<div id="${art.id}">${art.title}</div>`
       })
