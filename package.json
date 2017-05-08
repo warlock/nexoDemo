@@ -20,9 +20,8 @@
     "express": "^4.15.2"
   },
   "devDependencies": {
-    "nexo": "0.0.35",
-    "socket.io-client": "^1.7.3",
-    "webcookie": "0.0.2"
+    "nexo": "0.0.39",
+    "socket.io-client": "^1.7.4"
   },
   "description": "Base for WEB SERVICE using Nexo.js and Express.js"
 }

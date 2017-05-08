@@ -23,7 +23,10 @@ app.get('/iden', (req, res) => {
 app.use(checksec)
 
 app.get('/protected', (req, res) => {
-  res.send('OK')
+  res.json([
+    { id : "art1", title : "Title 1"},
+    { id : "art2", title : "Title 2"}
+  ])
 })
 
 app.listen(port, () => {

@@ -7,7 +7,7 @@ module.exports = {
     <input type="text" id="password"><br>
     <button id="loginBtn">Login</button>
   `,
-  action : n => {
+  ready : n => {
     n.on('#loginBtn', 'click', () => {
       fetch(`${window.location.href}iden?user=${n.id('username').value}&password=${n.id('password').value}`)
       .then(res => {
@@ -17,7 +17,7 @@ module.exports = {
         if (res.token === undefined) {
           n.id('alert').innerHTML = `ERROR: ${JSON.stringify(res)}`
           setTimeout(() => {
-            if (n.id('alert') !== undefined) n.id('alert').innerHTML = ""
+            if (n.id('alert') !== null) n.id('alert').innerHTML = ""
           }, 3000)
         } else n.emit('login', res.token)
       })
