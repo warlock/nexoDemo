@@ -1,6 +1,6 @@
 module.exports = {
   name: 'menuSite',
-  html: () => `
+  html: n => `
   <div id="menuSite" class="menuSite">
     <button id="logout">Logout</button>
   </div>

@@ -1,6 +1,6 @@
 module.exports = {
   name : 'loginPage',
-  html : () => `
+  html : n => `
     <h1>Login</h1>
     <div id="alert"></div>
     <input type="text" id="username"><br>

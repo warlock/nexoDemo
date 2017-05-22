@@ -1,6 +1,6 @@
 module.exports = {
   name : 'sitePage',
-  load : (n, data, render) => {
+  load : (n, render) => {
     fetch(`http://localhost:3000/protected?ztoken=${n.cookies.get('xtoken')}`)
     .then(res => {
       return res.json()
@@ -12,29 +12,9 @@ module.exports = {
       render({ msg : err })
     })
   },
-  html : (n, data) => {
-    if (!n.empty(data) && !n.empty(data.msg)) {
-      return `${n.get('menuSite')}<br>
-      ERROR: ${data.msg}`
-    } else {
-      var text = `
-      ${n.get('menuSite')}
-      <div><b>WELCOME TO MAINSITE</b></div>`
-      data.forEach(art => {
-        text += `<div id="${art.id}">${art.title}</div>`
-      })
-      return text
-    }
-  },
-  ready : (n, data) => {
-    if (!n.empty(data) && !n.empty(data.msg)) {
-      console.log(data.msg)
-    } else {
-      data.forEach(art => {
-        n.on(`#${art.id}`, 'click', () => {
-          console.log(art.title)
-        })
-      })
-    }
-  }
+  html : n => `
+    ${n.render('menuSite')}
+    <div><b>WELCOME TO MAINSITE</b></div>
+    ${n.model('sitePage').get().msg?n.render('articles', { data : n.model('sitePage').get() }):n.model('sitePage').get().msg}
+ `
 }
