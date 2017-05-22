@@ -17,7 +17,7 @@ echo "Installing node modules..."
 echo "Exec: npm i"
 npm i
 echo "Build nexo frontend web with webpack..."
-webpack
+webpack -p
 echo ""
 echo "NEXO DEMO: INSTALLED"
 echo "-------------------------------------------------------------"
