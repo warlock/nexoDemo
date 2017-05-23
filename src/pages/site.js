@@ -15,6 +15,6 @@ module.exports = {
   html : n => `
     ${n.render('menuSite')}
     <div><b>WELCOME TO MAINSITE</b></div>
-    ${n.empty(n.state.msg)? n.render('articles', { state : n.state }) : n.state.msg}
+    ${n.empty(n.data.msg)? n.render('articles', { data : n.data }) : n.data.msg}
  `
 }
