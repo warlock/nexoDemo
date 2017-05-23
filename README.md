@@ -1,4 +1,4 @@
-## NEXO 0.0.46-BETA DEMO
+## NEXO 0.0.49-BETA DEMO
 
 Install webpack and dependences and build the nexo.js bundle.
 ```sh

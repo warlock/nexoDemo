@@ -15,6 +15,6 @@ module.exports = {
   html : n => `
     ${n.render('menuSite')}
     <div><b>WELCOME TO MAINSITE</b></div>
-    ${n.empty(n.model('sitePage').get().msg)? n.render('articles', { status : n.model('sitePage').get() }) : n.model('sitePage').get().msg}
+    ${n.empty(n.state.msg)? n.render('articles', { state : n.state }) : n.state.msg}
  `
 }
