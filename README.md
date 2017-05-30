@@ -1,4 +1,4 @@
-## NEXO 0.0.55
+## NEXO 0.0.51
 
 Install webpack and dependences and build the nexo.js bundle.
 ```sh
